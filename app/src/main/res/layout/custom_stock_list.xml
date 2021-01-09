@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_toStartOf="@id/button_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageview_product"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            tools:src="#6C3333" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textStyle="bold"
+                tools:text="@tools:sample/lorem/random" />
+
+            <!-- sample loren Test -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="@tools:sample/lorem/random" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textview_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:textColor="#EF6C00"
+                    android:textSize="18sp"
+                    tools:text="$ 13,000" />
+
+                <!-- sample loren Test -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_marginStart="12dp"
+                    android:id="@+id/textview_stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    tools:text="14 piece" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_width="80dp"
+        android:layout_height="90dp"
+        android:text="@string/edit"
+        android:id="@+id/button_edit"
+        android:textColor="#EF6C00"/>
+</RelativeLayout>

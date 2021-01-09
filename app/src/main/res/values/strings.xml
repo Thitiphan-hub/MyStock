@@ -1,0 +1,29 @@
+<resources>
+
+
+    <string name="app_name">MyStock</string>
+
+    <!-- Login -->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="forgot_password">FORGOT PASSWORD ?</string>
+    <string name="or">or</string>
+    <!-- Login -->
+
+    <!-- Home -->
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title">TITLE</string>
+
+    <string-array name="tab_title">   <!-- String ที่มีลักษณะเป็น arrayof -->
+        <item>PRODUCT</item>
+        <item>STOCK</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit">EDIT</string>
+    <!-- Home -->
+
+</resources>

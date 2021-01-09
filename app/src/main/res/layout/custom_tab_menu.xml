@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:background="#FF0000">
+
+    <!-- tools ตอน run มันจะไม่นำไปแสดงด้วย คุณสมบัติออกแบบมีผลแค่ preview -->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:src="@drawable/ic_product"
+        android:id="@+id/icon_tab"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:layout_marginStart="12dp"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:text="@string/title"
+        android:id="@+id/text_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--  <androidx.appcompat.widget.AppCompatImageView
+          android:src="@drawable/ic_stock"
+          android:layout_width="50dp"
+          android:layout_height="50dp"/>
+      <TextView
+          android:text="BBB"
+          android:layout_width="50dp"
+          android:layout_height="50dp"/> -->
+
+</androidx.appcompat.widget.LinearLayoutCompat>
