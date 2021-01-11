@@ -1,20 +1,36 @@
 package com.codemobiles.mystock.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.codemobiles.mystock.EditActivity
 import com.codemobiles.mystock.R
 import com.codemobiles.mystock.databinding.CustomProductListBinding
 import com.codemobiles.mystock.databinding.CustomStockListBinding
+import com.codemobiles.mystock.models.JsonPhotoResult
+import com.codemobiles.mystock.services.stock.APIStockClient
 
-class CustomStockListAdapter(var stockList : ArrayList<String>?) : RecyclerView.Adapter<CustomStockListAdapter.ViewHolder>() {  // พิม ViewHolder เองดีกว่า และกด alt + enter
+class CustomStockListAdapter(private var stockList: List<JsonPhotoResult>?) :
+    RecyclerView.Adapter<CustomStockListAdapter.ViewHolder>() {  // พิม ViewHolder เองดีกว่า และกด alt + enter // var stockList : ArrayList<String>?
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomStockListAdapter.ViewHolder {  // ใช้ layout อะไรในการแสดงผลของส่วน RecycleView
-        val binding = CustomStockListBinding.inflate(LayoutInflater.from(parent.context), parent, false) //parent คือตัวแปรที่เป็น parameter ใส่ false แนบอะไรใส่ยัง แต่ false ไปเพราะเราไม่ต้องการ Attach // กำลังทำ ViewBinding ลักษณะแบบ Adapter
-              return ViewHolder(binding.root, binding)  // CustomProductListBinding จะมีการ binding กับพวก id ต่างๆ เพราะมันมาจาก Layout แล้วมันจะส่งมาที่ ViewHolder และตัวนี้จะเป็นตัวถือ binding มันถือเพื่อ เอา binding มา .price.text เราจึงต้องเปลี่ยน content
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CustomStockListAdapter.ViewHolder {  // ใช้ layout อะไรในการแสดงผลของส่วน RecycleView
+        val binding = CustomStockListBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        ) //parent คือตัวแปรที่เป็น parameter ใส่ false แนบอะไรใส่ยัง แต่ false ไปเพราะเราไม่ต้องการ Attach // กำลังทำ ViewBinding ลักษณะแบบ Adapter
+        return ViewHolder(
+            binding.root,
+            binding
+        )  // CustomProductListBinding จะมีการ binding กับพวก id ต่างๆ เพราะมันมาจาก Layout แล้วมันจะส่งมาที่ ViewHolder และตัวนี้จะเป็นตัวถือ binding มันถือเพื่อ เอา binding มา .price.text เราจึงต้องเปลี่ยน content
     }
 
 
@@ -22,22 +38,40 @@ class CustomStockListAdapter(var stockList : ArrayList<String>?) : RecyclerView.
 
     override fun getItemCount() = stockList?.size ?: 0
 
-
-
-
     override fun onBindViewHolder(holder: CustomStockListAdapter.ViewHolder, position: Int) {  // เปลี่ยน Content แถวที่ 1 ใช้ content แบบนี้ #Example ตัว Holder นี้ มันจะมากับ viewHolder จึงสามารถเข้าถึงทุกอย่างได้แล้ว ระวังด้วยว่ามันเป็น RecycleView อยู่หรือเปล่า?
         val binding = holder.binding
 
-        val lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-        binding.imageviewProduct.setImageResource(R.drawable.banner)
-        binding.textviewName.text = lorem
-        binding.textviewDetail.text = lorem
-        binding.textviewPrice.text = "฿ 20,000"
-        binding.textviewStock.text = "223 piece"
+        with(binding) {
+
+
+
+//            Glide.with(imageviewProduct.context)
+//                .load("https://secure.ap-tescoassets.com/assets/TH/537/8858891301537/ShotType1_540x540.jpg")
+//                .into(imageviewProduct)
+
+            stockList?.let { list ->
+                val item = list[position]
+                val lorem = item.id
+                textviewName.text = item.title
+                textviewDetail.text = "lorem"
+                textviewPrice.text = "฿ 1,800"
+                textviewStock.text = "24 piece"
+
+                Glide.with(binding.imageviewProduct.context)
+                    .load(APIStockClient.getImageURL() + item.thumbnailUrl)
+                    .error(R.drawable.stockerror)
+                    .into(binding.imageviewProduct)
+            }
+
+
+        }
     }
 
 
-  inner  class ViewHolder(view: View , val binding : CustomStockListBinding) : RecyclerView.ViewHolder(view) {  // ตัว Class ที่เชื่อมกับตัว ViewGroup ตัวกำ Viewbinding ข้างล่าง
+    inner class ViewHolder(view: View, val binding: CustomStockListBinding) :
+        RecyclerView.ViewHolder(view) {  // ตัว Class ที่เชื่อมกับตัว ViewGroup ตัวกำ Viewbinding ข้างล่าง
 
     }
 }
+
+//"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."

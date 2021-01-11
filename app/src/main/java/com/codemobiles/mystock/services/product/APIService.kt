@@ -1,6 +1,7 @@
-package com.codemobiles.mystock.services
+package com.codemobiles.mystock.services.product
 
 import com.codemobiles.mystock.models.JsonDemoResult
+import com.codemobiles.mystock.models.JsonPhotoResult
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -21,4 +22,6 @@ interface APIService {
     @GET("users")
     fun getDemoUser(): Call<List<JsonDemoResult>>   // ประกาศ Fun return call<List<ตัว Model ของเราที่แปลงมา>> alt + Enter = call(Retrofit2)
 
+    @GET("photos")
+    fun getDemoPhoto(): Call<List<JsonPhotoResult>>
 }

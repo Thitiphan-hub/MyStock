@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="2dp" /> <!-- ความโค้งมน -->
+            <stroke android:width="2dp" android:color="#48FFFFFF" /> <!-- เส้นตัวขอบ -->
+            <solid android:color="#B88CF8"  /> <!-- สีพื้นหลัง -->
+        </shape>
+    </item>
+    <item> <!-- จังหวะที่ยังไม่ได้กดปุ่ม -->
+        <shape>
+            <stroke android:width="2dp" android:color="#C1000000" />
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+</selector>

@@ -1,4 +1,4 @@
-package com.codemobiles.mystock.services
+package com.codemobiles.mystock.services.product
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,4 +23,5 @@ object APIClient {
 
     }
 //เราจะเรียกใช้ Fun นี้ตอน ติดต่อ Network
+
 }

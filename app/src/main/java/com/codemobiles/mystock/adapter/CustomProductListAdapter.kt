@@ -29,24 +29,24 @@ class CustomProductListAdapter(private var productList: List<JsonDemoResult>?) :
 
         with(binding) {
 
+
+
 //            Glide.with(imageviewProduct.context)
 //                .load("https://secure.ap-tescoassets.com/assets/TH/537/8858891301537/ShotType1_540x540.jpg")
 //                .into(imageviewProduct)
 
-          imageviewProduct.setImageResource(R.drawable.aa)
+          imageviewProduct.setImageResource(R.drawable.ad)
             // ใส่ข้อมูล list position อย่างไงก็เข้ามาเรื่อยๆ
 
 // check Null โดย let ตัวนี้ไม่เท่ากับ null หรือเปล่าถ้าไม่เท่ากับ ส่วนต่อไปจะมีค่า
 // if (productList != null) ประกาศแบบด้านล่างแปลว่าตัวนี้มันเป็นและต่อไปจะไม่เท่ากับ null
-
-
             productList?.let { list ->
                 val item = list[position]
                 val lorem = item.name
                 textviewName.text = lorem
                 textviewDetail.text = lorem
-                textviewPrice.text = "฿ 20,000"
-                textviewStock.text = "223 piece"
+                textviewPrice.text = "฿ 140"
+                textviewStock.text = "16 piece"
             }
 
         }

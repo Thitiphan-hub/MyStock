@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -11,12 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_centerVertical="true"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageview_product"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:scaleType="centerCrop"
             tools:src="#6C3333" />
 
@@ -58,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:textColor="#EF6C00"
+                    android:textColor="#000000"
                     android:textSize="18sp"
                     tools:text="$ 13,000" />
 
@@ -67,9 +68,10 @@
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_marginStart="12dp"
                     android:id="@+id/textview_stock"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="10dp"
+                    android:textSize="12dp"
                     tools:text="14 piece" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -89,7 +91,8 @@
         android:layout_centerVertical="true"
         android:layout_width="80dp"
         android:layout_height="90dp"
+        android:background="@drawable/button_stock_edit"
         android:text="@string/edit"
         android:id="@+id/button_edit"
-        android:textColor="#EF6C00"/>
+        android:textColor="#FF000000"/>
 </RelativeLayout>

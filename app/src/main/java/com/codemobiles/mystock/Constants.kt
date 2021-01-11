@@ -4,3 +4,4 @@ package com.codemobiles.mystock
 
 const val PREFS_KEY_IS_USERNAME = "username"    // เก็บ Status  // พิมตัวใหญ่ไปเลยว่านี่คือตัวแปรค่าคงที่
 const val PREFS_KEY_IS_LOGIN = "is_login"
+

@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.codemobiles.mystock.adapter.CustomProductListAdapter
 import com.codemobiles.mystock.databinding.FragmentProductBinding
 import com.codemobiles.mystock.models.JsonDemoResult
-import com.codemobiles.mystock.services.APIClient
-import com.codemobiles.mystock.services.APIService
+import com.codemobiles.mystock.services.product.APIClient
+import com.codemobiles.mystock.services.product.APIService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,6 +49,7 @@ class ProductFragment : Fragment() {
 
     private fun feedNetwork() {
         binding.swipeRefresh.isRefreshing = true  // binding refresh แสดงสถานะการโหลด
+
         APIClient.getClient().create(APIService::class.java).getDemoUser()
             .let { call -> // เปลี่ยนชื่อ ไม่อยากให้มัน it
 

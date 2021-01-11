@@ -3,15 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90CAF9"
+    android:background="@color/white"
     tools:context=".StockFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        tools:spanCount="2"
-        android:id="@+id/stock_recyclerview"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:itemCount="50"
-        tools:listitem="@layout/custom_stock_list"/>
+        android:id="@+id/swipe_refresh"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            tools:spanCount="2"
+            android:id="@+id/stock_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="50"
+            tools:listitem="@layout/custom_stock_list"/>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </FrameLayout>
